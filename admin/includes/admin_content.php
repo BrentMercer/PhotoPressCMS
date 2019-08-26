@@ -9,8 +9,13 @@
                     </h1>
 
                     <?php 
-                        
+                        $user = new User();
+                        $result_set = $user->find_all_users();
+                        while($row = mysqli_fetch_array($result_set))
+                        echo $row['username'] . '<br>';
                     ?>
+
+                    
                     <ol class="breadcrumb">
                         <li>
                             <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
