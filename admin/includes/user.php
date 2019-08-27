@@ -1,6 +1,5 @@
 <?php
 
-
 class User {
 
 	public $id;
@@ -14,9 +13,8 @@ class User {
 	}
 
 	public static function find_user_by_id($user_id){
-		$result_set = self::find_this_query("SELECT * FROM users WHERE id=$user_id LIMIT 1");
-		$found_user = mysqli_fetch_array($result_set);
-		return $found_user;
+		$the_results_array = self::find_this_query("SELECT * FROM users WHERE id=$user_id LIMIT 1");
+		return !empty($the_results_array) ? array_shift($the_results_array) : false;
 	}
 
 	public static function find_this_query($sql){
@@ -48,6 +46,20 @@ class User {
 		}
 
 		return $the_object;
+	}
+
+	public static function verify_user($username, $password){
+		global $database;
+		$username = $database->escape_string($username);
+		$password = $database->escape_string($password);
+
+		$sql = "SELECT * FROM users WHERE ";
+		$sql .= "username = '{$username}' ";
+		$sql .= "AND password = '{$password}' ";
+		$sql .= "LIMIT 1";
+
+		$the_results_array = self::find_this_query($sql);
+		return !empty($the_results_array) ? array_shift($the_results_array) : false;
 	}
 
 	private function has_the_attribute($the_attribute){
