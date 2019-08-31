@@ -24,12 +24,12 @@
                     <?php
 
                     // Testing create with associative array
-                    $user = new User();
-                    $user->username = "grod555";
-                    $user->password = "334455";
-                    $user->first_name = "Gavin";
-                    $user->last_name = "Rosdale";
-                    $user->create();
+                    // $user = new User();
+                    // $user->username = "grod555";
+                    // $user->password = "334455";
+                    // $user->first_name = "Gavin";
+                    // $user->last_name = "Rosdale";
+                    // $user->create();
 
                     // Testing update with associative array
                     // $user = User::find_user_by_id(10);
