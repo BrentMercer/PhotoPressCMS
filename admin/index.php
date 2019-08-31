@@ -23,14 +23,22 @@
 
                     <?php 
                         
-                        $user = new User();
+                    // $user = new User();
 
-                        $user->username = "New username";
-                        $user->password = "New password";
-                        $user->first_name = "Patty";
-                        $user->last_name = "Jones";
+                    // $user->username = "New username";
+                    // $user->password = "New password";
+                    // $user->first_name = "Patty";
+                    // $user->last_name = "Jones";
 
-                        $user->create();
+                    // $user->create();
+
+                    // $user = User::find_user_by_id(5);
+                    // $user->last_name = "WILLIAMS";
+                    // $user->update();
+
+                    $user = User::find_user_by_id(6);
+                    $user->delete();
+
                     ?>
 
 
