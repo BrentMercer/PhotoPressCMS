@@ -22,27 +22,15 @@
                     </h1>
 
                     <?php 
-                        // $result_set = User::find_all_users();
-                        // while($row = mysqli_fetch_array($result_set))
-                        // echo $row['username'] . '<br>';
+                        
+                        $user = new User();
 
-                        // $found_user = User::find_user_by_id(2);
-                        // echo $found_user['username'] . '<br>';
+                        $user->username = "New username";
+                        $user->password = "New password";
+                        $user->first_name = "Patty";
+                        $user->last_name = "Jones";
 
-                        // $user = User::instantiation($the_record);
-                        // echo $user->first_name;
-                        // echo '<br>';
-
-                        // $users = User::find_all_users();
-
-                        // foreach ($users as $user) {
-                        //     echo $user->username . "<br>";
-                        // }
-
-                    $found_user = User::find_user_by_id(2);
-                    echo $found_user->username;
-
-
+                        $user->create();
                     ?>
 
 
