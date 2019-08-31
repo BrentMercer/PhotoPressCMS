@@ -45,6 +45,4 @@ class Database {
 $database = new Database();
 
 
-
-
 ?>

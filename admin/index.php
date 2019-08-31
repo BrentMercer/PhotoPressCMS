@@ -21,23 +21,53 @@
                         <small>Subheading</small>
                     </h1>
 
-                    <?php 
-                        
-                    // $user = new User();
+                    <?php
 
+                    // Testing create with associative array
+                    $user = new User();
+                    $user->username = "grod555";
+                    $user->password = "334455";
+                    $user->first_name = "Gavin";
+                    $user->last_name = "Rosdale";
+                    $user->create();
+
+                    // Testing update with associative array
+                    // $user = User::find_user_by_id(10);
+                    // $user->username = "crunk567";
+                    // $user->password = "popo90";
+                    // $user->first_name = "Frank";
+                    // $user->last_name = "Columbo";
+
+                    // $user->update();
+                    
+                    // Testing create new user                        
+                    // $user = new User();
                     // $user->username = "New username";
                     // $user->password = "New password";
                     // $user->first_name = "Patty";
                     // $user->last_name = "Jones";
-
                     // $user->create();
 
+                    // Testing update user last name
                     // $user = User::find_user_by_id(5);
                     // $user->last_name = "WILLIAMS";
                     // $user->update();
 
-                    $user = User::find_user_by_id(6);
-                    $user->delete();
+                    // Testing delete user
+                    // $user = User::find_user_by_id(8);
+                    // $user->delete();
+
+                    // Testing update user record on save
+                    // $user = User::find_user_by_id(9);
+                    // $user->first_name = "Charles";
+                    // $user->last_name = "Dupont";
+                    // $user->password = "123456";
+                    // $user->save();
+
+                    // Testing add user if username does not exist
+                    // $user = new User();
+                    // $user->username = "Charlie";
+                    // $user->save();
 
                     ?>
 
