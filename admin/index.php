@@ -41,12 +41,14 @@
                     // $user->update();
                     
                     // Testing create new user                        
-                    // $user = new User();
-                    // $user->username = "New username";
-                    // $user->password = "New password";
-                    // $user->first_name = "Patty";
-                    // $user->last_name = "Jones";
-                    // $user->create();
+                    // $photo = new Photo();
+
+                    // $photo->title = "Photo of lake";
+                    // $photo->size = 10;
+
+                    // $photo->create();
+
+                    echo "mountains.jpg";
 
                     // Testing update user last name
                     // $user = User::find_user_by_id(5);
@@ -66,8 +68,15 @@
 
                     // Testing add user if username does not exist
                     // $user = new User();
-                    // $user->username = "Charlie";
+                    // $user->username = "Samuel";
                     // $user->save();
+
+                    //  Testing photo class
+                    // $photos = Photo::find_all();
+                    // foreach ($photos as $photo) {
+                    //     echo $photo->title;
+                    // }
+
 
                     ?>
 
