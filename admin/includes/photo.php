@@ -11,8 +11,8 @@ class Photo extends Db_object {
 	public $type;
 	public $size;
 
-	public $tmp_path;
-	public $upload_directory = "image";
+	public $tmp_name;
+	public $upload_directory = "images";
 	public $errors = array();
 	public $upload_errors_array = array(
 		UPLOAD_ERR_OK 			=> "There is no error.",
@@ -30,23 +30,61 @@ class Photo extends Db_object {
 	public function set_file($file){
 
 		if (empty($file) || !$file || !is_array($file)) {
-			$this->errors[] = "There was no file uploaded here."
+			$this->errors[] = "There was no file uploaded here.";
 			return false;
 		} elseif ($file['error'] != 0) {
-			$this->errors[] = $this->upload_errors_array[$file['errors']];
+			$this->errors[] = $this->upload_errors_array[$file['error']];
 			return false;
 		} else {
 			$this->filename = basename($file['name']);
-			$this->tmp_path = $file['tmp_path'];
+			$this->tmp_name = $file['tmp_name'];
 			$this->type 	= $file['type'];
 			$this->size 	= $file['size'];
 		}
-		
 	}
 
+	public function photo_path(){
+		return $this->upload_directory . DS . $this->filename;
+	}
+
+	public function save(){
+		if ($this->photo_id) {
+			
+			$this->update();
+
+		} else {
+			
+			if (!empty($this->errors)) {
+				return false;
+			}
+
+			if (empty($this->filename) || empty($this->tmp_name)) {
+				$this->errors[] = "The file was not available";
+				return false;
+			}
+
+			$target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->filename;
+
+			if (file_exists($target_path)) {
+				$this->errors[] = "The file {$this->filename} already exists.";
+				return false;
+			}
+
+			if (move_uploaded_file($this->tmp_name, $target_path)) {
+				if ($this->create()) {
+					unset($this->tmp_name);
+					return true;
+				}
+			} else {
+				$this->erros[] = "The file directory probably does not have permission.";
+				return false;
+			}
+
+			$this->create();
+		}
+	}
+
+
+
 }
-
-
-
-
 ?>
