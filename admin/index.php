@@ -25,6 +25,9 @@
 
                     <?php
 
+                    // $photo = Photo::find_by_id(7);
+                    // echo $photo->filename;
+
                     // Testing create with associative array
                     // $user = new User();
                     // $user->username = "grod555";
@@ -50,7 +53,7 @@
 
                     // $photo->create();
 
-                    echo "mountains.jpg";
+                    // echo "mountains.jpg";
 
                     // Testing update user last name
                     // $user = User::find_user_by_id(5);

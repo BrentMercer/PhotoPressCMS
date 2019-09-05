@@ -2,14 +2,12 @@
 
 class Db_object {
 
-	protected static $db_table = "users";
-
 	public static function find_all(){		
 		return static::find_by_query("SELECT * FROM " . static::$db_table . " ");
 	}
 
-	public static function find_by_id($user_id){
-		$the_results_array = static::find_by_query("SELECT * FROM users WHERE id=$user_id LIMIT 1");
+	public static function find_by_id($id){
+		$the_results_array = static::find_by_query("SELECT * FROM "  . static::$db_table .  " WHERE id=$id LIMIT 1");
 		return !empty($the_results_array) ? array_shift($the_results_array) : false;
 	}
 
