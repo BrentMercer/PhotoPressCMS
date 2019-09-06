@@ -14,6 +14,8 @@ if (empty($_GET['id'])) {
 			$photo->caption = $_POST['caption'];
 			$photo->alternate_text = $_POST['alternate_text'];
 			$photo->description = $_POST['description'];
+
+			$photo->save();
 		}
 	}
 }
@@ -36,25 +38,23 @@ if (empty($_GET['id'])) {
 	        <div class="row">
 	            <div class="col-lg-12">
 	                <h1 class="page-header">
-	                    Photos
+	                    Edit Photo
 	                    <small>Subheading</small>
 	                </h1>
 
 		            <form action="" method="post">
 
-		                <ol class="breadcrumb">
-		                    <li>
-		                        <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-		                    </li>
-		                    <li class="active">
-		                        <i class="fa fa-file"></i> Blank Page
-		                    </li>
-		                </ol>
-
 		                <div class="col-md-8">
 		                	<div class="form-group">
 		                		<input type="text" name="title" class="form-control" value="<?php echo $photo->title; ?>">
 		                	</div>
+
+		                	<div class="form-group">
+		                		<a href="#" class="thumbnail">
+		                			<img src="<?php echo $photo->photo_path(); ?>" alt="">
+		                		</a>
+		                	</div>
+
 		                	<label for="caption">Caption</label>
 		                	<div class="form-group">
 		                		<input type="text" name="caption" class="form-control" value="<?php echo $photo->caption; ?>">
