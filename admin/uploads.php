@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
 	            <div class="col-lg-12">
 	                
 	                <h1 class="page-header">
-	                    Uploads
+	                    Upload
 	                    <small>Subheading</small>
 	                </h1>
 
