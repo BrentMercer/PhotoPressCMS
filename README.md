@@ -1,2 +1,3 @@
-# WorldPressCMS
- A simple CMS made with PHP
+# PhotoPressCMS
+ A simple CMS for users to manage photos. Made with raw PHP (OOP).
+ 
