@@ -42,6 +42,11 @@
 	padding: 10px;
 }
 
+/*Login page*/
+#login-id label {
+	color: white;
+}
+
 /* Photo library modal*/
 
 .modal-dialog {

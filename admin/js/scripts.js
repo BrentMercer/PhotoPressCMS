@@ -10,8 +10,6 @@ $(document).ready(function(){
 
 	var photo_id;
 
-	
-
 	$(".modal_thumbnails").click(function(){
 
 		$("#set_user_image").prop('disabled', false);
@@ -57,6 +55,17 @@ $(document).ready(function(){
 
 	});
 
+	// Edit photo sidebar
+	$('.photo-info-box').click(function(){
+		$('.inside').slideToggle('fast');
+		$('#toggle').toggleClass('glyphicon-menu-down glyphicon , glyphicon-menu-up glyphicon ');
+	});
+
+
+	// Confirm delete
+	$('.delete-link').click(function(){
+		return confirm("Are you sure you want to delete this?");
+	});
 
 
 

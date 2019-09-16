@@ -12,7 +12,7 @@ $user = User::find_by_id($_GET['id']);
 
 if ($user) {
 	$session->message("User {$user->username} has been deleted.");
-	$user->delete_user();
+	$user->delete_photo();
 	redirect('users.php');
 } else {
 	redirect('users.php');
