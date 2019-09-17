@@ -7,6 +7,7 @@
 * Bootstrap
 * JavaScript
 * jQuery
+* AJAX
 * DropzoneJS
 * XAMPP
 
